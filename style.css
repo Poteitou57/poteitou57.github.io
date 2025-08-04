@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15em auto 7em;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "header header header"
+        "nav    nav    nav   "
+        "aside  main   right"
+        "footer footer footer";
+
+    background-image: url("background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    grid-area: header;
+    padding: 3em;
+    height: 10em;
+    background: #00000080;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #000000FF;
+}
+
+aside {
+    grid-area: aside;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    padding: 3em;
+    background: #00000080;
+}
+
+main {
+    grid-area: main;
+    background-color: #FFFFFFFF;
+    padding: 10%;
+}
+
+h1 {
+    color: #FFFFFFFF;
+    font-size: 2em;
+}
+
+h1::after {
+    content: "（~ω~）？";
+    display: inline-block;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+h1:hover::after {
+    opacity: 1;
+    transform: translateX(1em);
+}
+
+.button {
+    flex-grow: 1;
+    color: white;
+    padding: 1em;
+}
