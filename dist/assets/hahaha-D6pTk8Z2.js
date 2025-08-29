@@ -1,0 +1,1 @@
+import{_ as t,c as s,o as e,w as c,a as o,d as p,L as r,b as _}from"./Layout-CR6U8kAL.js";const d={setup(n){return(l,a)=>(e(),s(r,null,{default:c(()=>a[0]||(a[0]=[o("video",{autoplay:"",loop:"",muted:""},[o("source",{src:p})],-1)])),_:1,__:[0]}))}},u=t(d,[["__scopeId","data-v-0adc2ad4"]]);_(u).mount("body");

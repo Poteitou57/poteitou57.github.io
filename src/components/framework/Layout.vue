@@ -3,7 +3,8 @@
 <template>
   <div class="background">
     <video loop muted autoplay>
-      <source src="@/assets/background_SunaookamiShiroko.mp4"></source>
+      <source src="@/assets/background_SunaookamiShiroko.mp4">
+      </source>
     </video>
   </div>
   <div class="layout">
@@ -63,6 +64,10 @@
 }
 
 .layout {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
   display: grid;
   grid-template-columns: 15em auto 7em;
   grid-template-rows: auto auto auto auto;
