@@ -8,10 +8,24 @@ defineProps({
 </script>
 
 <template>
-    <h1 :class="{'dynamic': dynamic}">Poteitou57&emsp;|</h1>
+    <a href="/">
+        <h1 :class="{ 'dynamic': dynamic }">Poteitou57&emsp;|</h1>
+    </a>
 </template>
 
 <style scoped>
+a {
+    color: transparent;
+    cursor: default;
+    user-select: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2em;
+    color: #FFFFFFFF;
+}
+
 h1::after {
     content: "（~ω~）？";
     display: inline-block;

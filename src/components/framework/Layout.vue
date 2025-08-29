@@ -1,5 +1,5 @@
 <script setup>
-import Feature from './Feature.vue';
+import Feature from '@/components/framework/Feature.vue';
 </script>
 
 <template>
@@ -11,21 +11,21 @@ import Feature from './Feature.vue';
   </div>
   <div class="layout">
     <header>
-      <Feature onclick="window.location.href='/'" />
+      <Feature />
     </header>
     <nav>
-      <button class="button" onclick="window.location.href='/home'">
+      <a href="/home">
         <h2>Home</h2>
-      </button>
-      <button class="button" onclick="window.location.href='/library'">
+      </a>
+      <a href="/library">
         <h2>Library</h2>
-      </button>
-      <button class="button" onclick="window.location.href='/about'">
+      </a>
+      <a href="/about">
         <h2>About</h2>
-      </button>
-      <button class="button" onclick="window.location.href='/hahaha'">
+      </a>
+      <a href="/hahaha">
         <h2>Hahaha...</h2>
-      </button>
+      </a>
     </nav>
     <aside>
       <slot name="catalog"></slot>
@@ -34,12 +34,12 @@ import Feature from './Feature.vue';
       <slot></slot>
     </main>
     <footer>
-      <Feature :dynamic="false" onclick="window.location.href='/'" />
+      <Feature :dynamic="false" ona="window.location.href='/'" />
       <div class="links">
-        <img src="@/assets/logo_github.svg" alt="GitHub"></img>
-        <img src="@/assets/logo_bilibili.svg" alt="Bilibili"></img>
-        <img src="@/assets/logo_qq.svg" alt="QQ"></img>
-        <img src="@/assets/logo_wechat.svg" alt="WeChat"></img>
+        <a href="https://github.com/Poteitou57" target="_blank"><img src="@/assets/logo_github.svg" alt="GitHub"></img></a>
+        <a href="https://space.bilibili.com/155961961" target="_blank"><img src="@/assets/logo_bilibili.svg" alt="Bilibili"></img></a>
+        <a href="" target="_blank"><img src="@/assets/logo_qq.svg" alt="QQ"></img></a>
+        <a href="" target="_blank"><img src="@/assets/logo_wechat.svg" alt="WeChat"></img></a>
       </div>
       <div>All rights reserved.</div>
     </footer>
@@ -69,14 +69,13 @@ import Feature from './Feature.vue';
   width: 100%;
   height: 100%;
   overflow: hidden;
-  touch-action: none;
   display: grid;
   grid-template-columns: 15em auto 7em;
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "header header header"
     "nav    nav    nav   "
-    "aside   main   main"
+    "aside  main   main  "
     "footer footer footer";
   background-color: transparent;
 }
@@ -104,13 +103,13 @@ footer>* {
   margin: 1em;
 }
 
-footer>.links>img {
-  width: 3em;
-  height: 3em;
+.links>a>img {
+  width: 2em;
+  height: 2em;
   margin: 0 1em;
 }
 
-footer>.links {
+.links {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -134,14 +133,16 @@ nav {
   background-color: #000000A0;
 }
 
-nav>button {
+a {
   flex-grow: 1;
-  background-color: transparent;
-  border-color: transparent;
-  padding: 1em;
+  color: transparent;
+  cursor: default;
+  user-select: none;
+  text-decoration: none;
 }
 
-nav>button>h2 {
+h2 {
+  text-align: center;
   color: #FFFFFFFF;
 }
 
@@ -149,10 +150,5 @@ main {
   grid-area: main;
   background-color: #FFFFFFFF;
   padding: 10%;
-}
-
-header>h1 {
-  color: #FFFFFFFF;
-  font-size: 2em;
 }
 </style>
