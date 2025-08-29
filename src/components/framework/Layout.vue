@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import Feature from './Feature.vue';
+</script>
 
 <template>
   <div class="background">
@@ -9,7 +11,7 @@
   </div>
   <div class="layout">
     <header>
-      <h1 onclick="window.location.href='/'">Poteitou57&emsp;|</h1>
+      <Feature onclick="window.location.href='/'" />
     </header>
     <nav>
       <button class="button" onclick="window.location.href='/home'">
@@ -32,14 +34,14 @@
       <slot></slot>
     </main>
     <footer>
-      <div>Poteitou57&emsp;|（~ω~）？</div>
+      <Feature :dynamic="false" onclick="window.location.href='/'" />
       <div class="links">
-        <img class="logo" src="@/assets/logo_github.svg"></img>
-        <img class="logo" src="@/assets/logo_bilibili.svg"></img>
-        <img class="logo" src="@/assets/logo_qq.svg"></img>
-        <img class="logo" src="@/assets/logo_wechat.svg"></img>
+        <img src="@/assets/logo_github.svg" alt="GitHub"></img>
+        <img src="@/assets/logo_bilibili.svg" alt="Bilibili"></img>
+        <img src="@/assets/logo_qq.svg" alt="QQ"></img>
+        <img src="@/assets/logo_wechat.svg" alt="WeChat"></img>
       </div>
-      <div>All rights reserved. {{ }} </div>
+      <div>All rights reserved.</div>
     </footer>
   </div>
 </template>
@@ -92,8 +94,29 @@ footer {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   background-color: #000000FF;
   color: #FFFFFFFF;
+}
+
+footer>* {
+  margin: 1em;
+}
+
+footer>.links>img {
+  width: 3em;
+  height: 3em;
+  margin: 0 1em;
+}
+
+footer>.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 aside {
@@ -131,27 +154,5 @@ main {
 header>h1 {
   color: #FFFFFFFF;
   font-size: 2em;
-}
-
-header>h1::after {
-  content: "（~ω~）？";
-  display: inline-block;
-  opacity: 0;
-  transition: all 1s;
-
-}
-
-header>h1:hover::after {
-  opacity: 1;
-  transform: translateX(1em);
-}
-
-footer>.links>.logo {
-  width: 3em;
-  height: 3em;
-}
-
-footer>.links {
-  display: flex;
 }
 </style>
