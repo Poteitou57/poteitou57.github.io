@@ -1,26 +1,14 @@
-<script setup>
-defineProps({
-    dynamic: {
-        type: Boolean,
-        default: true
-    }
-});
+<script setup lang="ts">
+const { dynamic = false } = defineProps<{ dynamic?: boolean }>();
 </script>
 
 <template>
-    <a href="/">
-        <h1 :class="{ 'dynamic': dynamic }">Poteitou57&emsp;|</h1>
-    </a>
+    <RouterLink to="/">
+        <h1 :class="{ 'dynamic': dynamic }">马铃术 Poteitou57&emsp;|</h1>
+    </RouterLink>
 </template>
 
 <style scoped>
-a {
-    color: transparent;
-    cursor: default;
-    user-select: none;
-    text-decoration: none;
-}
-
 h1 {
     font-size: 2em;
     color: #FFFFFFFF;

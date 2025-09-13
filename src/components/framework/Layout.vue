@@ -1,52 +1,60 @@
-<script setup>
+<script setup lang="ts">
 import Feature from '@/components/framework/Feature.vue';
 </script>
 
 <template>
-  <div class="background">
-    <video loop muted autoplay>
-      <source src="@/assets/background_SunaookamiShiroko.mp4">
-      </source>
-    </video>
-  </div>
   <div class="layout">
-    <header>
-      <Feature />
-    </header>
-    <nav>
-      <a href="/home">
-        <h2>Home</h2>
-      </a>
-      <a href="/library">
-        <h2>Library</h2>
-      </a>
-      <a href="/about">
-        <h2>About</h2>
-      </a>
-      <a href="/hahaha">
-        <h2>Hahaha...</h2>
-      </a>
-    </nav>
-    <aside>
-      <slot name="catalog"></slot>
-    </aside>
-    <main>
-      <slot></slot>
-    </main>
-    <footer>
-      <Feature :dynamic="false" ona="window.location.href='/'" />
-      <div class="links">
-        <a href="https://github.com/Poteitou57" target="_blank"><img src="@/assets/logo_github.svg" alt="GitHub"></img></a>
-        <a href="https://space.bilibili.com/155961961" target="_blank"><img src="@/assets/logo_bilibili.svg" alt="Bilibili"></img></a>
-        <a href="" target="_blank"><img src="@/assets/logo_qq.svg" alt="QQ"></img></a>
-        <a href="" target="_blank"><img src="@/assets/logo_wechat.svg" alt="WeChat"></img></a>
-      </div>
-      <div>All rights reserved.</div>
-    </footer>
+    <div class="background">
+      <video loop muted autoplay>
+        <source src="@/assets/background_SunaookamiShiroko.mp4">
+        </source>
+      </video>
+    </div>
+    <div class="foreground">
+      <header>
+        <Feature dynamic />
+      </header>
+      <nav>
+        <RouterLink to="/home">
+          <h2>Home</h2>
+        </RouterLink>
+        <RouterLink to="/library">
+          <h2>Library</h2>
+        </RouterLink>
+        <RouterLink to="/about">
+          <h2>About</h2>
+        </RouterLink>
+        <RouterLink to="/hahaha">
+          <h2>Hahaha...</h2>
+        </RouterLink>
+      </nav>
+      <main>
+        <RouterView />
+      </main>
+      <footer>
+        <Feature />
+        <div class="links">
+          <a href="https://github.com/Poteitou57" target="_blank"><img src="@/assets/logo_github.svg"
+              alt="GitHub"></img></a>
+          <a href="https://space.bilibili.com/155961961" target="_blank"><img src="@/assets/logo_bilibili.svg"
+              alt="Bilibili"></img></a>
+          <a href="" target="_blank"><img src="@/assets/logo_qq.svg" alt="QQ"></img></a>
+          <a href="" target="_blank"><img src="@/assets/logo_wechat.svg" alt="WeChat"></img></a>
+        </div>
+        <div>Copyright &copy; 2025 Poteitou57. All rights reserved.</div>
+      </footer>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.layout {
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  overflow: hidden;
+}
+
 .background {
   width: 100%;
   height: 100%;
@@ -65,17 +73,17 @@ import Feature from '@/components/framework/Feature.vue';
   object-fit: cover;
 }
 
-.layout {
+.foreground {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   display: grid;
   grid-template-columns: 15em auto 7em;
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "header header header"
     "nav    nav    nav   "
-    "aside  main   main  "
+    "main   main   main  "
     "footer footer footer";
   background-color: transparent;
 }
@@ -103,10 +111,20 @@ footer>* {
   margin: 1em;
 }
 
-.links>a>img {
-  width: 2em;
-  height: 2em;
-  margin: 0 1em;
+nav {
+  grid-area: nav;
+  padding: 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #000000A0;
+}
+
+main {
+  grid-area: main;
+  background-color: #FFFFFFFF;
+  padding: 10%;
 }
 
 .links {
@@ -118,25 +136,15 @@ footer>* {
   align-content: center;
 }
 
-aside {
-  visibility: hidden;
-  grid-area: aside;
-}
-
-nav {
-  grid-area: nav;
-  padding: 3em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  background-color: #000000A0;
+.links>a>img {
+  width: 2em;
+  height: 2em;
+  margin: 0 1em;
 }
 
 a {
   flex-grow: 1;
   color: transparent;
-  cursor: default;
   user-select: none;
   text-decoration: none;
 }
@@ -144,11 +152,5 @@ a {
 h2 {
   text-align: center;
   color: #FFFFFFFF;
-}
-
-main {
-  grid-area: main;
-  background-color: #FFFFFFFF;
-  padding: 10%;
 }
 </style>
