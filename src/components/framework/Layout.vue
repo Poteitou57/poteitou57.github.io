@@ -3,7 +3,6 @@ import Feature from '@/components/framework/Feature.vue';
 </script>
 
 <template>
-  <div class="layout">
     <div class="background">
       <video loop muted autoplay>
         <source src="@/assets/background_SunaookamiShiroko.mp4">
@@ -44,17 +43,9 @@ import Feature from '@/components/framework/Feature.vue';
         <div>Copyright &copy; 2025 Poteitou57. All rights reserved.</div>
       </footer>
     </div>
-  </div>
 </template>
 
 <style scoped>
-.layout {
-  width: 100dvw;
-  height: 100dvh;
-  position: fixed;
-  overflow: hidden;
-}
-
 .background {
   width: 100%;
   height: 100%;
