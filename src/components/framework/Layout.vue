@@ -144,4 +144,8 @@ h2 {
   text-align: center;
   color: #FFFFFFFF;
 }
+
+Feature {
+  color: #FFFFFFFF;
+}
 </style>

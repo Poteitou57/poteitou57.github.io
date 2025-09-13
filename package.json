@@ -11,6 +11,8 @@
   "dependencies": {
     "@types/node": "^24.3.1",
     "pinia": "^3.0.3",
+    "sass": "^1.92.1",
+    "sass-loader": "^16.0.5",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

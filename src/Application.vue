@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import Layout from "@/components/framework/Layout.vue"
+import Page from "@/components/nt/framework/Page.vue"
 </script>
 
 <template>
-    <Layout>
-        
-    </Layout>
+    <Page />
 </template>
-
-<style scoped>
-h2 {
-    text-align: center;
-    font-size: 5em;
-}
-</style>

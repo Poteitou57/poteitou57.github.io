@@ -3,15 +3,13 @@
 
 <template>
     <main>
-        <h2>404</h2>
-        <h2>Sorry, the page you are visiting is not existed!</h2>
+        <h2>Welcome to Poteitou57's Website!</h2>
         <p><strong>All of this is website is under construction.</strong></p>
         <p>yet...</p>
         <p>yet..</p>
         <p>yet.</p>
         <h3>Below are the lorems with 300 words.</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia repellendus obcaecati suscipit modi
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quia repellendus obcaecati suscipit modi
             corporis ipsa ratione praesentium numquam vel! Deserunt, beatae delectus debitis voluptas laudantium,
             quisquam a, illo aut molestiae sint tempora dolorem provident vero! Quis aliquid veniam maiores eos velit
             minima dignissimos voluptate atque voluptates eius debitis esse, adipisci unde qui amet commodi, neque
